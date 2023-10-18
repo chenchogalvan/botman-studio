@@ -59,7 +59,6 @@ class ConversationServices extends Conversation
                 if ($answer->getValue() === 'vender') {
                     $this->say('¡Genial! ¿Que tipo de propiedad quieres vender?');
                 } elseif ($answer->getValue() === 'comprar') {
-                    $this->say('¡Genial! ¿Que tipo de propiedad quieres comprar?');
                     $this->askBuyType();
                 } elseif ($answer->getValue() === 'rentar_depa_terreno') {
                     $this->say('¡Genial! ¿Que tipo de propiedad quieres rentar?');
