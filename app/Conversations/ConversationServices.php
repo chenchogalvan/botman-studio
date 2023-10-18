@@ -131,11 +131,11 @@ class ConversationServices extends Conversation
         return $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'propios') {
-                    $this->askBuyBudget();
+                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
                 } elseif ($answer->getValue() === 'credito') {
-                    $this->askBuyBudget();
+                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
                 } else {
-                    $this->askBuyBudget();
+                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
                 }
 
             }

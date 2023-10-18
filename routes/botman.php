@@ -13,4 +13,4 @@ $botman->hears('It just works', function($bot) {
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
 
-$botman->hears('Hola', \App\Conversations\ConversationServices::class.'@askFirstname');
+$botman->hears('Hola',BotManController::class.'@startConversation');
