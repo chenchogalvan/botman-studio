@@ -89,13 +89,10 @@ class ConversationServices extends Conversation
         return $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'casa') {
-                    $this->say('¡Genial! ¿Que tipo de casa quieres comprar?');
                     $this->askBuyBudget();
                 } elseif ($answer->getValue() === 'terreno') {
-                    $this->say('¡Genial! ¿Que tipo de terreno quieres comprar?');
                     $this->askBuyBudget();
                 } else {
-                    $this->say('¡Genial! ¿Que tipo de terreno quieres comprar?');
                     $this->askBuyBudget();
                 }
             }
@@ -131,11 +128,11 @@ class ConversationServices extends Conversation
         return $this->ask($question, function (Answer $answer) {
             if ($answer->isInteractiveMessageReply()) {
                 if ($answer->getValue() === 'propios') {
-                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
+                    $this->say('Gracias '.$this->firstname . ', hemos almacenado tu información y nos pondremos en contacto contigo pronto.');
                 } elseif ($answer->getValue() === 'credito') {
-                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
+                    $this->say('Gracias '.$this->firstname . ', hemos almacenado tu información y nos pondremos en contacto contigo pronto.');
                 } else {
-                    $this->say('Gracias '.$this->firstname . ' por probar el prueba del chat.');
+                    $this->say('Gracias '.$this->firstname . ', hemos almacenado tu información y nos pondremos en contacto contigo pronto.');
                 }
 
             }
