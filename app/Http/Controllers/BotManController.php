@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Conversations\CompraInmuebleConversation;
 use App\Conversations\ConversationServices;
+use App\Conversations\InformacionUsuarioConversation;
+use App\Conversations\VentaPropiedadConversation;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use App\Conversations\ExampleConversation;
@@ -33,7 +36,7 @@ class BotManController extends Controller
      */
     public function startConversation(BotMan $bot)
     {
-        $bot->startConversation(new ConversationServices());
+        $bot->startConversation(new InformacionUsuarioConversation());
     }
 
 
