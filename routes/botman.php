@@ -13,4 +13,7 @@ $botman->hears('It just works', function($bot) {
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
 
-$botman->hears('Hola',BotManController::class.'@startConversation');
+
+$palabrasClave = config('palabras_clave');
+
+$botman->hears('/\b(' . implode('|', $palabrasClave) . ')\b/i',BotManController::class.'@startConversation');
