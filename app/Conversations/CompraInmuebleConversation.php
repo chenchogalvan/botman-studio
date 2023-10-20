@@ -58,7 +58,7 @@ class CompraInmuebleConversation extends Conversation
             ]);
         $this->ask($recursos, function (Answer $answer) {
             $this->datos['recursos_propios'] = $answer->getText();
-            if ($answer->getText() === 'crédito') {
+            if ($answer->getValue() === 'crédito') {
                 $this->datos['tipo_credito'] = $answer->getText();
                 $this->askTipoCredito();
             } else {

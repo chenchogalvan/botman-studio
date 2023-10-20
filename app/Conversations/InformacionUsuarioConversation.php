@@ -64,16 +64,16 @@ class InformacionUsuarioConversation extends Conversation
                 Button::create('Rentar Inmueble ')->value('rentar_inmueble'),
             ]);
         $this->ask($botones, function (Answer $answer) {
-            if ($answer->getText() === 'compra_inmueble') {
+            if ($answer->getValue() === 'compra_inmueble') {
                 $this->datos['tipo_servicio'] = $answer->getText();
                 $this->bot->startConversation(new CompraInmuebleConversation($this->datos));
-            } else if ($answer->getText() === 'venta_propiedad') {
+            } else if ($answer->getValue() === 'venta_propiedad') {
                 $this->datos['tipo_servicio'] = $answer->getText();
                 $this->bot->startConversation(new VentaPropiedadConversation($this->datos));
-            } else if ($answer->getText() === 'rentar_propiedad') {
+            } else if ($answer->getValue() === 'rentar_propiedad') {
                 $this->datos['tipo_servicio'] = $answer->getText();
                 $this->bot->startConversation(new RentaPropiedadConversation($this->datos));
-            } else if ($answer->getText() === 'rentar_inmueble') {
+            } else if ($answer->getValue() === 'rentar_inmueble') {
                 $this->datos['tipo_servicio'] = $answer->getText();
                 $this->bot->startConversation(new RentaInmuebleConversation($this->datos));
             }

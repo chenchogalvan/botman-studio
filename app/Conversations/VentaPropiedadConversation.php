@@ -49,7 +49,7 @@ class VentaPropiedadConversation extends Conversation
                     Button::create('No, no tengo adeudo')->value('no'),
                 ]),
             function (Answer $answer) {
-                if ($answer->getText() === 'si') {
+                if ($answer->getValue() === 'si') {
                     $this->datos['adeudo'] = $answer->getText();
                     $this->askNumeroCredito();
                 } else {
