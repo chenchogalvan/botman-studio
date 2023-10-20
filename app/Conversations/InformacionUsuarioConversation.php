@@ -21,7 +21,7 @@ class InformacionUsuarioConversation extends Conversation
                 Button::create('En otra ocación-')->value('no'),
             ]);
         $this->ask($botones, function (Answer $answer){
-            if ($answer->getText() === 'si') {
+            if ($answer->getValue() === 'si') {
                 $this->askNombreCompleto();
             } else {
                 $this->say('¡Gracias por tu tiempo! Si necesitas ayuda, puedes escribirnos a través de nuestro sitio web o llamarnos al 55 5555 5555.');
