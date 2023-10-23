@@ -19,7 +19,8 @@ class InformacionUsuarioConversation extends Conversation
             ->addButtons([
                 Button::create('Claro que si.')->value('si'),
                 Button::create('En otra ocación-')->value('no'),
-            ]);
+            ])
+        ;
         $this->ask($botones, function (Answer $answer){
             if ($answer->getValue() === 'si') {
                 $this->askNombreCompleto();

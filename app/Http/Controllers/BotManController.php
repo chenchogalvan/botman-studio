@@ -9,6 +9,7 @@ use App\Conversations\VentaPropiedadConversation;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
 use App\Conversations\ExampleConversation;
+use Illuminate\Support\Facades\Log;
 
 class BotManController extends Controller
 {
@@ -17,6 +18,7 @@ class BotManController extends Controller
      */
     public function handle()
     {
+        Log::info('test');
         $botman = app('botman');
 
         $botman->listen();
