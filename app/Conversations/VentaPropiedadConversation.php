@@ -114,7 +114,7 @@ class VentaPropiedadConversation extends Conversation
             $this->datos['descripcion'] = $answer->getText();
 
             // Guardar los datos en la base de datos
-//            Propiedad::create($this->datos);
+           Propiedad::create($this->datos);
             Log::info($this->datos);
 
             $this->say('¡Gracias por proporcionar la información! Hemos registrado tus datos en la base de datos.');
