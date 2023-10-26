@@ -90,7 +90,7 @@ class CompraInmuebleConversation extends Conversation
             $this->datos['descripcion'] = $answer->getText();
 
             // Guardar los datos en la base de datos
-//            CompraInmueble::create($this->datos);
+           CompraInmueble::create($this->datos);
             Log::info($this->datos);
 
             $this->say('¡Gracias por proporcionar la información! Hemos registrado tus datos en la base de datos.');
