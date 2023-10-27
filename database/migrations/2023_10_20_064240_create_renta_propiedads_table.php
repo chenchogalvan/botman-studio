@@ -15,6 +15,9 @@ class CreateRentaPropiedadsTable extends Migration
     {
         Schema::create('renta_propiedads', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_completo');
+            $table->string('telefono');
+            $table->string('correo');
             $table->string('tipo_inmueble');
             $table->string('presupuesto');
             $table->string('ubicacion');
