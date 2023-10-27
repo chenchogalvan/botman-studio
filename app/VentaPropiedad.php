@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class VentaPropiedad extends Model
 {
     protected $fillable = [
+        'nombre_completo',
+        'telefono',
+        'correo',
         'ubicacion',
         'precio',
         'adeudo',
