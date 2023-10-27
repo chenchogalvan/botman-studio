@@ -15,6 +15,9 @@ class CreateCompraInmueblesTable extends Migration
     {
         Schema::create('compra_inmuebles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_completo');
+            $table->string('telefono');
+            $table->string('correo');
             $table->string('tipo_inmueble');
             $table->string('presupuesto');
             $table->string('ubicacion');
