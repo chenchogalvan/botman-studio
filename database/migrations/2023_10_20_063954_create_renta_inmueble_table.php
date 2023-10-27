@@ -15,6 +15,9 @@ class CreateRentaInmuebleTable extends Migration
     {
         Schema::create('renta_inmueble', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_completo');
+            $table->string('telefono');
+            $table->string('correo');
             $table->string('tipo_inmueble');
             $table->string('presupuesto');
             $table->integer('personas');
