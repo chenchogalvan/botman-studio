@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class RentaInmueble extends Model
 {
     protected $fillable = [
+        'nombre_completo',
+        'telefono',
+        'correo',
         'tipo_inmueble',
         'presupuesto',
         'personas',
