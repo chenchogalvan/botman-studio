@@ -38,7 +38,7 @@ class BotManController extends Controller
      */
     public function startConversation(BotMan $bot)
     {
-        $bot->startConversation(new InformacionUsuarioConversation());
+        $bot->startConversation(new VentaPropiedadConversation());
     }
 
 
