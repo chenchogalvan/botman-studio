@@ -7,9 +7,6 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Outgoing\Question;
-use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
-use BotMan\Drivers\Facebook\Extensions\Element;
-use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use Illuminate\Support\Facades\Log;
 
 class InformacionUsuarioConversation extends Conversation
@@ -18,29 +15,16 @@ class InformacionUsuarioConversation extends Conversation
 
     public function run()
     {
+        $botones =  Question::create('¡Hola! Soy el asistente virtual de '.config('app.name').'. Me gustaría obtener más información para ayudarte mejor. ¿Podrías proporcionarme algunos datos?')
+            ->fallback('Greeting Message')
+            ->callbackId('greetingMessage')
+            ->addButtons([
+                Button::create('Claro que si.')->value('si'),
+                Button::create('En otra ocación-')->value('no'),
+            ])
+        ;
 
-        $botones = ButtonTemplate::create('¡Hola! Soy el asistente virtual de '.config('app.name').'. Me gustaría obtener más información para ayudarte mejor. ¿Podrías proporcionarme algunos datos?')
-            ->addButton(ElementButton::create('Claro que si.')
-                ->type('postback')
-                ->payload('claroquesi')
-            )
-            ->addButton(ElementButton::create('En otra ocación')
-                ->type('postback')
-                ->payload('enotraocacion')
-            );
-
-//        $botones =  Element::create('¡Hola! Soy el asistente virtual de '.config('app.name').'. Me gustaría obtener más información para ayudarte mejor. ¿Podrías proporcionarme algunos datos?')
-//            ->addButton(
-//                Button::create('Claro que si.')->value('si')
-//
-//            )
-//            ->addButton(
-//                Button::create('En otra ocación-')->value('no')
-//
-//            )
-//        ;
-        $this->reply($botones, function (Answer $answer){
-            Log::info($answer);
+        $this->ask($botones, function (Answer $answer){
             if ($answer->getValue() === 'si') {
                 $this->askNombreCompleto();
             } else {
@@ -96,6 +80,9 @@ class InformacionUsuarioConversation extends Conversation
             } else if ($answer->getValue() === 'rentar_inmueble') {
                 $this->datos['tipo_servicio'] = $answer->getText();
                 $this->bot->startConversation(new RentaInmuebleConversation($this->datos));
+            }else{
+                $this->datos['tipo_servicio'] = $answer->getText();
+                $this->bot->startConversation(new CompraInmuebleConversation($this->datos));
             }
 
         });
