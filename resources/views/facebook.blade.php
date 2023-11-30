@@ -49,12 +49,20 @@
         });
     }
 
+    function loggedOut() {
+        FB.logout(function(response) {
+            // Person is now logged out
+        });
+    }
+
 </script>
 
 <!-- The JS SDK Login Button -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="pages_show_list,pages_manage_metadata,pages_messaging,pages_read_engagement" onlogin="checkLoginState();">
 </fb:login-button>
+
+<button onclick="loggedOut();">Cerrar sesión</button>
 
 <div id="status">
 </div>
