@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<!--
 <script>
 
     function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
@@ -29,7 +28,7 @@
 
     window.fbAsyncInit = function() {
         FB.init({
-            appId      : '10160615857336564',
+            appId      : '740965801394679',
             cookie     : true,                     // Enable cookies to allow the server to access the session.
             xfbml      : true,                     // Parse social plugins on this webpage.
             version    : 'v18.0'           // Use this Graph API version for this call.
@@ -51,44 +50,16 @@
     }
 
 </script>
--->
 
 <!-- The JS SDK Login Button -->
 
-{{--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">--}}
-{{--</fb:login-button>--}}
-
-{{--<div id="status">--}}
-{{--</div>--}}
-
-
-
-<fb:login-button
-        scope="public_profile,email"
-        onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '740965801394679',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v18.0'
-        });
+<div id="status">
+</div>
 
-        FB.AppEvents.logPageView();
 
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
 
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
